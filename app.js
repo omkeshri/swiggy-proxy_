@@ -4,7 +4,7 @@ import cors from "cors";
 const app = express();
 
 app.use(cors({
-    origin: "https://food-ordering-website-omkeshri.web.app/",
+    origin: "*",
     maxAge: 600,
     credentials: true,
 }));
