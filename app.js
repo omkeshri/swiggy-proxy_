@@ -4,7 +4,7 @@ import cors from "cors";
 const app = express();
 
 app.use(cors({
-    origin: "*",
+    origin: "https://food-ordering-website-omkeshri.web.app/",
     maxAge: 600,
     credentials: true,
 }));
@@ -43,7 +43,7 @@ app.get("/menu", async (req, res) => {
             return res.status(400).json({ message: "Missing resId parameter" });
         }
 
-        console.log("Fetching menu for Restaurant ID:", resId);
+        // console.log("Fetching menu for Restaurant ID:", resId);
 
         const fetch = (await import("node-fetch")).default; // Dynamic Import
         const swiggyBase = `https://swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=31.2195994&lng=75.7633405&restaurantId=${resId}`;
