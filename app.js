@@ -15,12 +15,7 @@ app.get("/restaurant", async (req, res) => {
 
         const swiggyBase = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
-        const response = await fetch(swiggyBase, {
-            headers: {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-                "Accept": "application/json",
-            }
-        });
+        const response = await fetch(swiggyBase);
 
         if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
 
